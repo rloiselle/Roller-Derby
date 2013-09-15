@@ -4356,7 +4356,7 @@ a.list-group-item.active > .badge,
 @media screen and (min-width: 768px) {
   .jumbotron {
     padding: 50px 60px;
-    border-radius: px;
+    border-radius: 6px;
   }
   .jumbotron h1 {
     font-size: 63px;

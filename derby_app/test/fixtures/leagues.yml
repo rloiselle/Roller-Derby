@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  wftda_league_id: 1
+  league_name: MyString
+  location: MyString
+  url: MyString
+  seasons: MyString
+
+two:
+  wftda_league_id: 1
+  league_name: MyString
+  location: MyString
+  url: MyString
+  seasons: MyString

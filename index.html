@@ -1,191 +1,67 @@
 <!DOCTYPE html>
-<head>
-<title>Twitter Bootstrap Tutorial - A responsive layout tutorial</title>
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<style type='text/css'>
-body {
-background-color: #CCC;
-}
-</style>
-</head>
-<body>
-	<div class="container">
-		<h1>TWITTER BOOTSTRAP TUTORIAL</h1>
-		<div class='navbar navbar-inverse'>
-	      <div class='navbar-inner nav-collapse' style="height: auto;">
-	        <ul class="nav">
-	          <li class="active"><a href="#">Home</a></li>
-	          <li><a href="#">Page One</a></li>
-	          <li><a href="#">Page Two</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	    <div id='content' class='row-fluid'>
-	      <div class='span9 main'>
-	        <h2>Main Content Section</h2>
-	         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.<p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	         <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-	      </div>
-	      <div class='span3 sidebar'>
-	        <h2>Sidebar</h2>
-	        <ul class="nav nav-tabs nav-stacked">
-		    	<li><a href='#'>Another Link 1</a></li>
-		    	<li><a href='#'>Another Link 2</a></li>
-		    	<li><a href='#'>Another Link 3</a></li>
-		  	</ul>
-	      </div>
-		</div>
+    <title>Narrow Jumbotron Template for Bootstrap</title>
 
-		<div id='placeholder' class='span12'></div>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
-			<script src="js/jquery.js"></script>
-			<script type="text/javascript">
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+  </head>
 
-// $.ajax({
-//         type: 'POST',
-//         url: 'http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?',
-//         dataType: 'json',
-//         global: false,
-//         async: false,
-//         success: function(data){
-//          // do some stuffs or assign data to a var
-//          alert(data[0]);
-//         }
-//    });
+  <body>
 
-// Below .getJSON works when '&callback?' added to the url name (else error: "Origin null is not allowed by Access-Control-Allow-Origin")
-// also, the data will only print when requesting data from an array position (else returns: [Object, Object, Object......])
+    <div class="container-narrow">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">Project name</h3>
+      </div>
 
-				// $.getJSON('http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=tab&callback=?', function(data) {
-				//   var test = JSON.parse(data[0]);
-				// });
+      <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-large btn-success" href="#">Sign up today</a></p>
+      </div>
 
-// Below .ajax works when '&callback?' added to the url name (else error: "Origin null is not allowed by Access-Control-Allow-Origin")
-// also, the data will only print when requesting data from an array position (else returns: [Object, Object, Object......])
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-				// $.ajax({
-				// 	type: "GET",
-    // 			url: "http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?",
-    // 			dataType: 'json',
-    // 			success: function(results){
-    //     		console.log(results[0]);
-    // 				}
-				// });
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-// Below DOES NOT WORK
-// .getJSON works when '&callback?' added to the url name (else error: "XMLHttpRequest cannot load http://rinxter.net/wftda/ds? Origin null is not allowed by Access-Control-Allow-Origin")
-//returns Resource interpreted as Script but transferred with MIME type text/plain:  [a link to the data in the url]
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
 
-		// $.getJSON("http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?", function(data) {
-		//     // $('body').append(data[0]);
-		//     // console.log(data[0])
-		// });
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-//same as above. doesn't matter if explicitly accessing array object
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-		// $.getJSON("http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?", function(json) {
-		 	// $('#placeholder').html(json[0]);
-		// });
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+      </div>
 
-//same as above. doesn't matter if explicitly accessing array object
-// if $.each(data, function.... it will Append [object Object] to html
-// unless data[0], then each piece in first hash is printed as list item
-// also this gives only the value from the first hash (key not printed)
+      <div class="footer">
+        <p>&copy; Company 2013</p>
+      </div>
 
-		$.getJSON('http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?', function(data) {
-		  var items = [];
+    </div> <!-- /container -->
 
-		  $.each(data[0], function(key, val) {
-		    items.push('<li id="' + key + '">' + val + '</li>');
-		  });
-
-		  $('<ul/>', {
-		    'class': 'my-new-list',
-		    html: items.join('')
-		  }).appendTo('body');
-		});
-
-		// $.getJSON('http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?', function(data) {
-		// 	// $('body').text(data.result);
-		//  	$.each(data, function(item){
-		//  		console.log(data[item])
-		//  		// $('body').append('<p>' + data[item]["tournament"] + '</p>');
-		//  	// 	$('body').data(data[item]);
-		//  	});
-	 // 	})
-
-
-// Below works if (when chrome browser closed) run in terminal: open -a Google\ Chrome --args --disable-web-security
-
-		// $.post('http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj', function(data) {
-	 //  $('body').append(data);
-
-// This results in error: Uncaught TypeError: Cannot use 'in' operator to search for '5843' in ...
-// I think it thinks its an array, but post changes format?
-		 	// $.each(data, function(item){
-		 	// 	$('body').append(data[item])
-		 	// });
-		// });
-
-		// $.getJSON('http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?', function(data) {
-		//  	$.each(data, function(item){
-		//  		$.each(item, function(key){
-		//  			console.log(key)
-		//  		});
-	 // 		});
-	 // 	})
-
-
- // var obj = { has_thing: true, id: 123 };
- // if(obj.has_thing) {
- // 	console.log('true', obj.id);
- // }
-
-// Below kind of works (2/3 attempts give no error), but still have to figure out how to get data into usable format
-
-// 		$.ajax({
-// 		    url:"http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj&callback=?",
-// 		    type:'GET',
-// 		    dataType:'json',
-// // Have also tried: 'application/javascript' to get rid of the issue of: transffered MIME type text/plain on jquery.js:7667
-// 		    contentType: 'text/javascript',
-// 		    success: function(data) {
-// // Problem accessing data? Only error from text/plain issue
-// 		          // $('#placeholder').append( data );
-// // This doesn't work because JSON will try and parse a string when it is an object.
-// // can concatenate quotes around object or use stringify (next attempt below)
-// 		          // var obj = $.parseJSON(data);
-// 		          // console.log(obj);
-// // This prints the same as if putting the url directly into browser.
-// // MIME type text/plain on jquery.js:7667 is still an issue...
-// 		          var obj = JSON.stringify(data);
-// 		          console.log(obj);
-// 		    }
-// 		});
-
-// alerts sucess, but return is [object,object]
-
-// 		var My_Array = [];
-// 		$.ajax({
-
-// 		        type    : "GET",
-// 		        url     : "http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj",
-// 		        dataType: "JSONP",
-// 		        cache   : false,
-// 		        data    : My_Array,
-// 		        error   : function(request,error){alert(request+" "+error); },
-// 		        success : function(data)
-// 		                {
-// // cand use data[0] to access array, but data not given. [object] is still returned
-// 		                    alert("Response" + data);
-// 		                }//success
-
-// 		}).fail(function(textStatus, errorThrown) { alert("error Error");
-// 		    console.log("The following error occured: "+ textStatus, errorThrown); });
-
-			</script>
-
-	</div>
-</body>
+  </body>
 </html>

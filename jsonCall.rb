@@ -1,12 +1,12 @@
 require 'json'
 require 'open-uri'
 
-# myData = JSON.parse(open("http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj").read)
+class Bouts
 
-class Tournament
+  attr_accessor(:wftda_bout_id, :team1_name, :team2_name )
 
   def initialize
-    @match_data = JSON.parse(open("http://rinxter.net/wftda/ds?type=boutList&leagueId=7&season=2012&output=obj").read)
+    @match_data = JSON.parse(open("http://rinxter.net/wftda/ds?type=boutList&teamId=85&season=2012&output=obj").read)
   end
 
   def formatdata
@@ -18,11 +18,6 @@ class Tournament
           puts "the value for the " + key + " is: " + value
         end
       end
-      # puts hash.keys
-      # val = hash.values_at("id", "date", "team1", "team1Score", "team2", "team2Score", "outcome")
-      # val.each do |item|
-      #   puts hash.key(item) + ": " + item
-      # end
     end
   end
 
@@ -34,15 +29,46 @@ class Tournament
 
   # names of columns in the rails database
   def rails_attributes
-    ["id", "date", "team1", "team1Score", "team2", "team2Score", "outcome"]
+    ["id", "team1", "team2"]
   end
 
 end
 
-# puts myData[0]["sanction"]
-# puts myData["tournament"]["artists"].map{|term| puts term["name"]}
-# puts myData["tournament"].map{|term| puts term["id"]}
+class BoutSummary
 
-t1 = Tournament.new
-t1.formatdata
-# t1.getHashValue
+  attr_accessor(:wftda_bout_id, :param,:team1tot, :team2tot )
+
+  def initialize
+    @match_data = JSON.parse(open("http://rinxter.net/wftda/ds?type=boutSummary&boutId=378&output=obj").read)
+  end
+
+  def formatdata
+    match_data.map do |hash|
+      puts "\n" + "---------------NEW Parameter------------------" + "\n" "\n"
+      hash.select do |key, value|
+           # puts key + ": " + value
+         if rails_attributes.include? key
+           puts "the value for the " + key + " is: " + value
+         end
+      end
+    end
+  end
+
+  # attr_reader :match_data
+
+  def match_data
+    @match_data
+  end
+
+  # names of columns in the rails database
+  def rails_attributes
+    ["id", "param", "team1tot","team2tot"]
+  end
+
+end
+
+b1 = Bouts.new
+b1.formatdata
+
+bs1 = BoutSummary.new
+bs1.formatdata

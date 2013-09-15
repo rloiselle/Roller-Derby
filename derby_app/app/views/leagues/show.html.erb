@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wftda league:</strong>
+  <%= @league.wftda_league_id %>
+</p>
+
+<p>
+  <strong>League name:</strong>
+  <%= @league.league_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @league.location %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @league.url %>
+</p>
+
+<p>
+  <strong>Seasons:</strong>
+  <%= @league.seasons %>
+</p>
+
+<%= link_to 'Edit', edit_league_path(@league) %> |
+<%= link_to 'Back', leagues_path %>

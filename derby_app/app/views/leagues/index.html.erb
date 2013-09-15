@@ -1,0 +1,35 @@
+<h1>Listing leagues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wftda league</th>
+      <th>League name</th>
+      <th>Location</th>
+      <th>Url</th>
+      <th>Seasons</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leagues.each do |league| %>
+      <tr>
+        <td><%= league.wftda_league_id %></td>
+        <td><%= league.league_name %></td>
+        <td><%= league.location %></td>
+        <td><%= league.url %></td>
+        <td><%= league.seasons %></td>
+        <td><%= link_to 'Show', league %></td>
+        <td><%= link_to 'Edit', edit_league_path(league) %></td>
+        <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New League', new_league_path %>
